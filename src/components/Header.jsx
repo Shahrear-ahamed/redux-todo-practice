@@ -16,7 +16,7 @@ export default function Header() {
           type="submit"
           className={`appearance-none w-10 h-8 bg-no-repeat bg-contain`}
         >
-          <img src={plusImage} alt="" srcset="" />
+          <img src={plusImage} alt="" />
         </button>
       </form>
 

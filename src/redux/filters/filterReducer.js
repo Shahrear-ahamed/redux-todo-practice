@@ -30,8 +30,10 @@ const filterReducer = (state = initialState, action) => {
         default:
           return state;
       }
-      
+
     default:
       return state;
   }
 };
+
+export default filterReducer;
