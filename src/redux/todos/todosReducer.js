@@ -29,7 +29,7 @@ const todosReducer = (state = initialState, action) => {
         if (todo.id === action.payload) {
           return {
             ...todo,
-            complated: !state.complated,
+            complated: !todo.complated,
           };
         }
         return todo;
