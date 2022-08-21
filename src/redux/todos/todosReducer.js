@@ -41,7 +41,7 @@ const todosReducer = (state = initialState, action) => {
       return state.map((todo) => {
         if (todo.id === todoId) {
           return {
-            ...state,
+            ...todo,
             color: color,
           };
         }
