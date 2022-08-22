@@ -19,8 +19,9 @@ const todosReducer = (state = initialState, action) => {
       return [
         ...state,
         {
-          id: nextTodoId(),
+          id: nextTodoId(state),
           title: action.payload,
+          complated: false,
         },
       ];
 
