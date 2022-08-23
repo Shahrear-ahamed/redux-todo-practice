@@ -5,6 +5,7 @@ import {
   CLEARCOMPLETED,
   COLORSELECTED,
   DELETED,
+  LOADED,
   TOGGLED,
 } from "./actionTypes";
 
@@ -15,13 +16,16 @@ const nextTodoId = (elements) => {
 
 const todosReducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOADED:
+      return action.payload;
+
     case ADDED:
       return [
         ...state,
         {
           id: nextTodoId(state),
           title: action.payload,
-          complated: false,
+          completed: false,
         },
       ];
 
@@ -30,7 +34,7 @@ const todosReducer = (state = initialState, action) => {
         if (todo.id === action.payload) {
           return {
             ...todo,
-            complated: !todo.complated,
+            completed: !todo.complated,
           };
         }
         return todo;
@@ -56,12 +60,12 @@ const todosReducer = (state = initialState, action) => {
       return state.map((todo) => {
         return {
           ...todo,
-          complated: true,
+          completed: true,
         };
       });
 
     case CLEARCOMPLETED:
-      return state.filter((todo) => !todo.complated);
+      return state.filter((todo) => !todo.completed);
 
     default:
       return state;

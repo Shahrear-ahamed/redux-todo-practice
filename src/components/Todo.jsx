@@ -4,7 +4,7 @@ import { colorSelected, deleted, toggled } from "../redux/todos/actions";
 
 export default function Todo({ todo }) {
   const dispatch = useDispatch();
-  const { color, complated, id, title } = todo;
+  const { color, completed, id, title } = todo;
 
   const handleToggle = (todoId) => {
     dispatch(toggled(todoId));
@@ -19,7 +19,7 @@ export default function Todo({ todo }) {
     <div className="flex justify-start items-center p-2 hover:bg-gray-100 hover:transition-all space-x-4 border-b border-gray-400/20 last:border-0">
       <div
         className={`rounded-full bg-white border-2 border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2${
-          complated && "border-green-500"
+          completed && "border-green-500"
         }`}
       >
         <input
@@ -27,7 +27,7 @@ export default function Todo({ todo }) {
           onChange={() => handleToggle(id)}
           className="opacity-0 absolute rounded-full cursor-pointer"
         />
-        {complated && (
+        {completed && (
           <svg
             className="fill-current w-3 h-3 text-green-500 pointer-events-none"
             viewBox="0 0 20 20"
@@ -37,7 +37,7 @@ export default function Todo({ todo }) {
         )}
       </div>
 
-      <div className={`select-none flex-1 ${complated && "line-through"}`}>
+      <div className={`select-none flex-1 ${completed && "line-through"}`}>
         {title}
       </div>
 
