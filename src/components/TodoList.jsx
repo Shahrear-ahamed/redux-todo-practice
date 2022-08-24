@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useSelector , useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import fetchTodos from "../redux/todos/thunk/fetchTodos";
 import Todo from "./Todo";
 
